@@ -70,7 +70,7 @@ Spring Cloud LoadBalancer 中添加了对实例运行状况检查的支持, 类�
 
 - [2.SpringCloud核心功能](https://blog.csdn.net/xxxlllbbb/article/details/105119475)
 
-3.	SpringCloud-Eureka服务注册中心
+- [3.SpringCloud-Eureka服务注册中心](https://blog.csdn.net/xxxlllbbb/article/details/105236069)
 
 4.	SpringCloud-Ribbon负载均衡式服务消费者
 

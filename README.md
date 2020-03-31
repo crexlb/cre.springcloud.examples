@@ -20,22 +20,21 @@ Spring Cloud Hoxton SR3 发布
 基于 Spring Boot 2.2.5 构建
 特别说明： 官方跳过了 SR2, 关于SR2 可以参考 Hoxton.SR2 发布了???
 升级说明
-####Spring Cloud Config
+#### Spring Cloud Config
 提供 ConfigTokenProvider 自定义功能
 修复 KeyStoreTestEncryptorLocator 的性能问题
-####Spring Cloud OpenFeign
+#### Spring Cloud OpenFeign
 升级 OpenFegin 10.7.4
 支持 Spring @MatrixVariable 注解,关于这个注解使用可以参考 SpringMVC之matrixVariable
-####Spring Cloud Gateway
+#### Spring Cloud Gateway
 增加 RetryFilter
 RouteDefinition 增加服务实例的元数据
 支持低于 1 req/s 条件限流
-####Spring Cloud CircuitBreaker
+#### Spring Cloud CircuitBreaker
 支持自定义断路器的实现
 Spring Cloud Commons
 Spring Cloud LoadBalancer 中添加了对实例运行状况检查的支持, 类是于 Ribbon ServerList 维护
-
-依赖更新
+#### 依赖更新
 ````
 <strong>Spring</strong> <strong>Cloud</strong> <strong>Aws</strong> 2.2.1.RELEASE
 <strong>Spring</strong> <strong>Cloud</strong> <strong>Vault</strong> 2.2.2.RELEASE (<strong>issues</strong>)

@@ -1,0 +1,20 @@
+server:
+  port: 8762
+
+spring:
+  application:
+    name: eureka.client.second.app
+  #安全认证信息
+  security:
+    user:
+      roles: SUPERUSER
+      name: swift
+      password: 123456
+
+eureka:
+  server:
+    register: localhost:8760
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.server.register}/eureka/
+

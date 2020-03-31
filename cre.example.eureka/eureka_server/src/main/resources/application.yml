@@ -1,0 +1,45 @@
+server:
+  #配置本服务端口
+  port: 8760
+
+spring:
+  application:
+    #配置本服务名称
+    name: eurka-server
+
+  #安全认证信息
+  security:
+    user:
+      name: admin
+      password: 123456
+
+eureka:
+  instance:
+    hostname: localhost
+    #是否显示ip地址
+    prefer-ip-address: true
+    #心跳超时时间，如果超过时间没有续约，则从注册中心删除
+    lease-expiration-duration-in-seconds: 60
+    #实例续约频率
+    lease-renewal-interval-in-seconds: 50
+    #设置配置中心当前实例的在eureka注册中心的ID
+    instance-id: ${spring.application.name}:${server.port}
+  server:
+    #自我保护(将默认60秒未续约的服务删除)
+    enable-self-preservation: true
+
+  client:
+    # 自我注册禁用（在默认情况下，服务注册中心也会将自己作为客户端来尝试注册它自己，设置为false）
+    registerWithEureka: false
+    # 是否检索服务（由于注册中心的职责就是维护服务实例，所以就不需要去检索服务，设置为false）
+    fetchRegistry: false
+    #健康检查
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      #eureka服务路径，对接高可用使用,分割，例如： http://eureka1:8761/eureka/,http://eureka2:8761/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+
+    #服务所在地区
+    region: beijing
+

@@ -8,13 +8,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>cre.example.eureka</artifactId>
+
+    <artifactId>cre.example.common</artifactId>
+
     <dependencies>
+        <!--SpringBoot 启动页-->
         <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>cre.example.common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 </project>

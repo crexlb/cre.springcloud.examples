@@ -1,9 +1,10 @@
+webapi: eureka.client.first.webapi
 server:
-  port: 8761
+  port: 8763
 
 spring:
   application:
-    name: eureka.client.first.webapi
+    name: consumer.ribbon.webapi
   #安全认证信息
   security:
     user:

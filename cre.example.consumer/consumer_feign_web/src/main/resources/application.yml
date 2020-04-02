@@ -1,9 +1,13 @@
+feign:
+    hystrix:
+      enabled: true
+
 server:
-  port: 8761
+  port: 8764
 
 spring:
   application:
-    name: eureka.client.first.webapi
+    name: consumer.feign.webapi
   #安全认证信息
   security:
     user:
@@ -16,4 +20,5 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.server.register}/eureka/
+
 

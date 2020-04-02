@@ -3,12 +3,11 @@ server:
 
 spring:
   application:
-    name: eureka.client.second.app
+    name: eureka.client.second.webapi
   #安全认证信息
   security:
     user:
-      roles: SUPERUSER
-      name: swift
+      name: admin
       password: 123456
 
 eureka:

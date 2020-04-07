@@ -9,4 +9,8 @@ public interface ICommonGreeting {
      * @param name 姓名
      */
     String hello(String name);
+
+    String postword(String name);
+
+    String getTime(String name);
 }

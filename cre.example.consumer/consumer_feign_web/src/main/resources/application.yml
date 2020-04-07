@@ -1,10 +1,23 @@
 feign:
     hystrix:
       enabled: true
-
+    client:
+      config:
+        default:
+          connectTimeout: 5000 #连接超时
+          readTimeout: 5000 #读取超时
+          loggerLevel: basic #日志等级
+    compression:
+      request: #请求
+        enabled: true #开启
+        mime-types: text/xml,application/xml,application/json #开启支持压缩的MIME TYPE
+        min-request-size: 2048 #配置压缩数据大小的下限
+      response: #响应
+        enabled: true #开启响应GZIP压缩
+#访问端口
 server:
   port: 8764
-
+#服务名称
 spring:
   application:
     name: consumer.feign.webapi
@@ -13,12 +26,13 @@ spring:
     user:
       name: admin
       password: 123456
-
+#服务注册
 eureka:
   server:
     register: localhost:8760
   client:
     serviceUrl:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.server.register}/eureka/
-
-
+#日志跟踪
+logging:
+  level: debug

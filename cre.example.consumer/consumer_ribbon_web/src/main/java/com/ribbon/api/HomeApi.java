@@ -31,6 +31,20 @@ public class HomeApi implements ICommonGreeting {
         return restTemplate.getForObject(url, String.class);
     }
 
+    @Override
+    @HystrixCommand(fallbackMethod = "error")
+    public String postword(String name) {
+        String url = String.format("http://%s/hello", webapi);
+        System.out.println("尝试访问：" + url);
+        return restTemplate.postForObject(url, name,String.class);
+    }
+
+    @Override
+    public String getTime(String name) {
+        String url = String.format("http://%s/time", webapi);
+        return restTemplate.getForObject(url,String.class);
+    }
+
     /**
      * 熔断
      */

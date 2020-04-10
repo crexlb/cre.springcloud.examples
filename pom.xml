@@ -17,6 +17,7 @@
         <module>cre.example.eureka</module>
         <module>cre.example.consumer</module>
         <module>cre.example.common</module>
+        <module>cre.example.breaker</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

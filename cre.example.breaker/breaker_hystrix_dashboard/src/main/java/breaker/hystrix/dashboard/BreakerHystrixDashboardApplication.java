@@ -1,20 +1,23 @@
-package consumer.feign;
+package breaker.hystrix.dashboard;
 
-import consumer.feign.configs.DefaultFeignConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 
 @SpringBootApplication
-@EnableEurekaClient
+@EnableHystrixDashboard
 @EnableDiscoveryClient
-////指定配置文件
-@EnableFeignClients(defaultConfiguration = DefaultFeignConfiguration.class)
-public class ConsumerFeignWebApplication {
+@EnableCircuitBreaker
+@EnableEurekaClient
+@EnableHystrix
+public class BreakerHystrixDashboardApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(ConsumerFeignWebApplication.class, args);
+        SpringApplication.run(BreakerHystrixDashboardApplication.class, args);
     }
+
 }

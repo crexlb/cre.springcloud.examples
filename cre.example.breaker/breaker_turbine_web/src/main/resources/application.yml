@@ -1,0 +1,36 @@
+#访问端口
+server:
+  port: 9002
+#服务名称
+spring:
+  application:
+    name: breaker.turbine.web
+  #安全认证信息
+  security:
+    user:
+      name: admin
+      password: 123456
+#服务注册
+eureka:
+  server:
+    register: localhost:8760
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.server.register}/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+turbine:
+  app-config: service-hi,service-lucy
+  aggregator:
+    clusterConfig: default
+  clusterNameExpression: new String("default")
+  combine-host: true
+  instanceUrlSuffix:
+    default: actuator/hystrix.stream

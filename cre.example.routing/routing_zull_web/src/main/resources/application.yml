@@ -1,0 +1,46 @@
+#访问端口
+server:
+  port: 8766
+#服务名称
+spring:
+  application:
+    name: routing.zull.web
+  #安全认证信息
+  security:
+    user:
+      name: admin
+      password: 123456
+#服务注册
+eureka:
+  server:
+    register: localhost:8760
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.server.register}/eureka/
+
+zuul:
+  #如果是url的方式，则zuul.host开头的生效。
+  host:
+    connect-timeout-millis: 6000
+    socket-timeout-millis: 6000
+    #如果路由方式是serviceId的方式，那么ribbon的生效
+  ribbon:
+    ReadTimeout: 3000
+    SocketTimeout: 3000
+  routes:
+      #路由节点a
+    api-a:
+      path: /api-a/**
+      serviceId: EUREKA.CLIENT.FIRST.WEBAPI
+      #路由节点b
+    api-b:
+      path: /api-b/**
+      serviceId: EUREKA.CLIENT.FIRST.WEBAPI
+      #路由节点c
+    api-c:
+      path: /api-c/**
+      serviceId: EUREKA.CLIENT.FIRST.WEBAPI
+      #路由节点d并对https://blog.csdn.net反向代理
+    api-d:
+      path: /proxy/**
+      url: https://blog.csdn.net

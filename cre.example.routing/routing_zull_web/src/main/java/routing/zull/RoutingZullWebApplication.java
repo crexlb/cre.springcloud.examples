@@ -15,5 +15,4 @@ public class RoutingZullWebApplication {
     public static void main(String[] args) {
         SpringApplication.run(RoutingZullWebApplication.class, args);
     }
-
 }

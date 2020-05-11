@@ -1,0 +1,9 @@
+
+访问：http://localhost:8767/api/a/hello?token=1接口自动路由到登录页。
+访问：http://localhost:8767/api/a/hello?token=1&user=1接口正常返回值
+
+增加路由：
+Post:http://localhost:8767/route/add
+参数
+{"filters":[{"args":{"parts":"2"},"name":"StripPrefix"}],"id":"api_d","order":0,"predicates":[{"args":{"pattern":"/api/d/**"},"name":"Path"}],"uri":"lb://EUREKA.CLIENT.FIRST.WEBAPI"}
+访问：http://localhost:8767/api/d/hello?token=1&user=1接口正常返回值

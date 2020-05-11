@@ -8,22 +8,25 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>routing_zull_web</artifactId>
+    <artifactId>routing_getway_web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>routing_zull_web</name>
+    <name>routing_getway_web</name>
     <description>Demo project for Spring Boot</description>
+
     <dependencies>
         <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>cre.example.common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>com.github.vladimir-bukhtoyarov</groupId>
+            <artifactId>bucket4j-core</artifactId>
+            <version>4.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
     </dependencies>
-
 
 </project>
